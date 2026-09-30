@@ -17,9 +17,7 @@
     "lib/*.js",
     "bin/asheron"
   ],
-  "bin": {
-    "asheron": "./bin/asheron"
-  },
+  "bin": "./bin/asheron",
   "exports": {
     ".": "./lib/main.js"
   },
@@ -35,5 +33,9 @@
     "test": "./scripts/test",
     "test:watch": "./scripts/test-watch",
     "release": "./scripts/release"
+  },
+  "dependencies": {
+    "dotenv": "17.2.3",
+    "midjourney": "4.3.18"
   }
 }

@@ -325,6 +325,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@huggingface/inference@npm:^2.5.0":
+  version: 2.8.1
+  resolution: "@huggingface/inference@npm:2.8.1"
+  dependencies:
+    "@huggingface/tasks": "npm:^0.12.9"
+  checksum: 10c0/7521705c35842045351b9aa8b74293040384a6d84c2c4c49508bf9960a76a32f0130e58537868c798ab46cb5966eac8b7ea7fd6e219c82d2bc926bd2d9f98a1d
+  languageName: node
+  linkType: hard
+
+"@huggingface/tasks@npm:^0.12.9":
+  version: 0.12.30
+  resolution: "@huggingface/tasks@npm:0.12.30"
+  checksum: 10c0/29180e64a034caa233b3b1618405fb45b3684df11347ba948774e199b525f8f9e2572bd3eeb57505173b17c4c903ee55cec6ce66b41f1ecbab21f4df1bb6057c
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -1769,6 +1785,10 @@ __metadata:
   resolution: "asheron@workspace:."
   dependencies:
     aberlaas: "npm:2.19.0"
+    dotenv: "npm:17.2.3"
+    midjourney: "npm:4.3.18"
+  bin:
+    asheron: ./bin/asheron
   languageName: unknown
   linkType: soft
 
@@ -1800,7 +1820,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:^3.0.0":
+"async@npm:^3.0.0, async@npm:^3.2.4":
   version: 3.2.6
   resolution: "async@npm:3.2.6"
   checksum: 10c0/36484bb15ceddf07078688d95e27076379cc2f87b10c03b6dd8a83e89475a3c8df5848859dd06a4c95af1e4c16fc973de0171a77f18ea00be899aca2a4f85e70
@@ -2509,6 +2529,13 @@ __metadata:
   dependencies:
     esutils: "npm:^2.0.2"
   checksum: 10c0/b6416aaff1f380bf56c3b552f31fdf7a69b45689368deca72d28636f41c16bb28ec3ebc40ace97db4c1afc0ceeb8120e8492fe0046841c94c2933b2e30a7d5ac
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:17.2.3":
+  version: 17.2.3
+  resolution: "dotenv@npm:17.2.3"
+  checksum: 10c0/c884403209f713214a1b64d4d1defa4934c2aa5b0002f5a670ae298a51e3c3ad3ba79dfee2f8df49f01ae74290fcd9acdb1ab1d09c7bfb42b539036108bb2ba0
   languageName: node
   linkType: hard
 
@@ -4533,6 +4560,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"isomorphic-ws@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "isomorphic-ws@npm:5.0.0"
+  peerDependencies:
+    ws: "*"
+  checksum: 10c0/a058ac8b5e6efe9e46252cb0bc67fd325005d7216451d1a51238bc62d7da8486f828ef017df54ddf742e0fffcbe4b1bcc2a66cc115b027ed0180334cd18df252
+  languageName: node
+  linkType: hard
+
 "iterator.prototype@npm:^1.1.5":
   version: 1.1.5
   resolution: "iterator.prototype@npm:1.1.5"
@@ -5003,6 +5039,21 @@ __metadata:
     braces: "npm:^3.0.3"
     picomatch: "npm:^2.3.1"
   checksum: 10c0/166fa6eb926b9553f32ef81f5f531d27b4ce7da60e5baf8c021d043b27a388fb95e46a8038d5045877881e673f8134122b59624d5cecbd16eb50a42e7a6b5ca8
+  languageName: node
+  linkType: hard
+
+"midjourney@npm:4.3.18":
+  version: 4.3.18
+  resolution: "midjourney@npm:4.3.18"
+  dependencies:
+    "@huggingface/inference": "npm:^2.5.0"
+    async: "npm:^3.2.4"
+    isomorphic-ws: "npm:^5.0.0"
+    semiver: "npm:^1.1.0"
+    snowyflake: "npm:^2.0.0"
+    tslib: "npm:^2.5.0"
+    ws: "npm:^8.13.0"
+  checksum: 10c0/553d815a089c53d04ddd3b775b2d7c946eb92be2521da7637627c382efd10e9147f89bfc38c57e27976128796d7aac931dc66c0ede2596f8fa92ac07cab1df68
   languageName: node
   linkType: hard
 
@@ -6354,6 +6405,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semiver@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "semiver@npm:1.1.0"
+  checksum: 10c0/f208555fcdf8726d25a5d5acd5079b1f6a274a9be291da6981c70867cca9abd43721648b338bac914fbc7874e2594217a5943a2e91410ce24b5a80a641d4468b
+  languageName: node
+  linkType: hard
+
 "semver@npm:^6.3.1":
   version: 6.3.1
   resolution: "semver@npm:6.3.1"
@@ -6550,6 +6608,13 @@ __metadata:
   version: 4.2.0
   resolution: "smart-buffer@npm:4.2.0"
   checksum: 10c0/a16775323e1404dd43fabafe7460be13a471e021637bc7889468eb45ce6a6b207261f454e4e530a19500cc962c4cc5348583520843b363f4193cee5c00e1e539
+  languageName: node
+  linkType: hard
+
+"snowyflake@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "snowyflake@npm:2.0.1"
+  checksum: 10c0/a76eeaf3b69da278706b05fc7be61d94ff687f0b0663ee2cf596d05260347e48f28d19575b35b13e9ca35f2fc6e1f92f37141bbf1a14e0763ab06c2373dd79d3
   languageName: node
   linkType: hard
 
@@ -7098,7 +7163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.1.0, tslib@npm:^2.6.2":
+"tslib@npm:^2.1.0, tslib@npm:^2.5.0, tslib@npm:^2.6.2":
   version: 2.8.1
   resolution: "tslib@npm:2.8.1"
   checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
@@ -7575,6 +7640,21 @@ __metadata:
     imurmurhash: "npm:^0.1.4"
     signal-exit: "npm:^4.0.1"
   checksum: 10c0/e8c850a8e3e74eeadadb8ad23c9d9d63e4e792bd10f4836ed74189ef6e996763959f1249c5650e232f3c77c11169d239cbfc8342fc70f3fe401407d23810505d
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.13.0":
+  version: 8.19.0
+  resolution: "ws@npm:8.19.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 10c0/4741d9b9bc3f9c791880882414f96e36b8b254e34d4b503279d6400d9a4b87a033834856dbdd94ee4b637944df17ea8afc4bce0ff4a1560d2166be8855da5b04
   languageName: node
   linkType: hard
 

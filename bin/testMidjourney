@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+import testMidjourney from '../lib/testMidjourney.js';
+
+await testMidjourney();
