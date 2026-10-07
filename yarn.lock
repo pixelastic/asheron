@@ -1785,7 +1785,7 @@ __metadata:
   resolution: "asheron@workspace:."
   dependencies:
     aberlaas: "npm:2.19.0"
-    dotenv: "npm:17.4.2"
+    dotenv: "npm:18.0.6"
     midjourney: "npm:4.3.18"
   bin:
     asheron: ./bin/asheron
@@ -2532,10 +2532,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:17.4.2":
-  version: 17.4.2
-  resolution: "dotenv@npm:17.4.2"
-  checksum: 10c0/164f8e77a646c8446867d5b588d26ea6005c8ea7c5eb41cf926f6113d23f2191355f6e0cfd95ea9bab98394a5b0a3f1e51a8399711b666fe55cc7b0bd745f942
+"dotenv@npm:18.0.6":
+  version: 18.0.6
+  resolution: "dotenv@npm:18.0.6"
+  bin:
+    dotenv: dist/index.cjs
+  checksum: 10c0/fe26487d82e6e1dcedc890bb7176fdb71d5540ebaf8b2adca5996a4891e133d0108699235e81c943ba6f02f00a4775843b96841bf24595b1fa67d9fb2c242efb
   languageName: node
   linkType: hard
 
