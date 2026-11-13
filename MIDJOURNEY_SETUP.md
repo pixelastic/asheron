@@ -1,10 +1,17 @@
-# Configuration Midjourney pour Asheron
+# Midjourney setup for Asheron
 
-Ce guide explique comment configurer et utiliser l'intégration Midjourney dans le projet Asheron.
+This guide explains how to configure and use the Midjourney integration in the
+Asheron project.
 
 ## Installation
 
-Les dépendances ont déjà été installées via:
+The dependencies are installed with the project:
+
+```bash
+yarn install
+```
+
+They were originally added with:
 
 ```bash
 yarn add midjourney dotenv
@@ -12,82 +19,84 @@ yarn add midjourney dotenv
 
 ## Configuration
 
-### 1. Obtenir votre token Discord (SALAI_TOKEN)
+### 1. Get your Discord token (SALAI_TOKEN)
 
-1. Connectez-vous à Discord dans votre navigateur web
-2. Ouvrez la console développeur (F12 ou Ctrl+Shift+I)
-3. Allez dans l'onglet Console
-4. Collez et exécutez ce code:
+1. Log in to Discord in your web browser
+2. Open the developer console (F12 or Ctrl+Shift+I)
+3. Go to the Console tab
+4. Paste and run this code:
 
-```javascript
-window.webpackChunkdiscord_app.push([
-  [Math.random()],
-  {},
-  (req) => {
-    for (const m of Object.keys(req.c)
-      .map((x) => req.c[x].exports)
-      .filter((x) => x)) {
-      if (m.default && m.default.getToken !== undefined) {
-        return copy(m.default.getToken());
-      }
-      if (m.getToken !== undefined) {
-        return copy(m.getToken());
-      }
-    }
-  },
-]);
-```
-
-5. Votre token est maintenant copié dans le presse-papier
-
-⚠️ **ATTENTION**: Ne partagez JAMAIS votre token Discord, c'est comme un mot de passe!
-
-### 2. Obtenir les IDs de serveur et de channel
-
-1. Dans Discord, cliquez sur un channel où le bot Midjourney est présent
-2. Regardez l'URL dans votre navigateur:
+   ```javascript
+   window.webpackChunkdiscord_app.push([
+     [Math.random()],
+     {},
+     (req) => {
+       for (const m of Object.keys(req.c)
+         .map((x) => req.c[x].exports)
+         .filter((x) => x)) {
+         if (m.default && m.default.getToken !== undefined) {
+           return copy(m.default.getToken());
+         }
+         if (m.getToken !== undefined) {
+           return copy(m.getToken());
+         }
+       }
+     },
+   ]);
    ```
+
+5. Your token is now copied to the clipboard
+
+⚠️ **WARNING**: NEVER share your Discord token. It works like a password.
+
+### 2. Get the server and channel IDs
+
+1. In Discord, click on a channel where the Midjourney bot is present
+2. Look at the URL in your browser:
+
+   ```text
    https://discord.com/channels/SERVER_ID/CHANNEL_ID
    ```
-3. Copiez le `SERVER_ID` et le `CHANNEL_ID`
 
-### 3. Créer le fichier .env
+3. Copy the `SERVER_ID` and the `CHANNEL_ID`
 
-Créez un fichier `.env` à la racine du projet:
+### 3. Create the .env file
+
+Create a `.env` file at the root of the project:
 
 ```bash
 cp .env.example .env
 ```
 
-Puis éditez le fichier `.env` et remplissez les valeurs:
+Then edit the `.env` file and fill in the values:
 
 ```env
-SALAI_TOKEN=votre_token_discord
-SERVER_ID=votre_server_id
-CHANNEL_ID=votre_channel_id
+SALAI_TOKEN=your_discord_token
+SERVER_ID=your_server_id
+CHANNEL_ID=your_channel_id
 ```
 
-## Utilisation
+## Usage
 
-### Test rapide
+### Quick test
 
-Pour tester l'intégration Midjourney:
+To test the Midjourney integration:
 
 ```bash
 ./bin/testMidjourney
 ```
 
-Ou avec Node:
+Or with Node:
 
 ```bash
 node bin/testMidjourney
 ```
 
-### Exemple de code
+### Code example
 
 ```javascript
-import { Midjourney } from 'midjourney';
 import dotenv from 'dotenv';
+import { Midjourney } from 'midjourney';
 
 dotenv.config();
 
@@ -101,35 +110,36 @@ const client = new Midjourney({
 
 await client.init();
 
-// Générer une image
+// Generate an image
 const result = await client.Imagine(
   'A beautiful sunset over mountains',
   (uri, progress) => {
-    console.log(`Progression: ${progress}`);
+    console.log(`Progress: ${progress}`);
   }
 );
 
 console.log('Image URL:', result.uri);
 ```
 
-## Fonctionnalités disponibles
+## Available features
 
-- **Imagine**: Générer des images à partir d'un prompt
-- **Upscale**: Agrandir une image générée (U1, U2, U3, U4)
-- **Variation**: Créer des variations d'une image (V1, V2, V3, V4)
-- **Blend**: Mélanger plusieurs images
-- **Describe**: Obtenir une description d'une image
+- **Imagine**: Generate images from a prompt
+- **Upscale**: Enlarge a generated image (U1, U2, U3, U4)
+- **Variation**: Create variations of an image (V1, V2, V3, V4)
+- **Blend**: Blend several images together
+- **Describe**: Get a description of an image
 
-## Ressources
+## Resources
 
-- [Package NPM midjourney](https://www.npmjs.com/package/midjourney)
+- [midjourney NPM package](https://www.npmjs.com/package/midjourney)
 - [GitHub erictik/midjourney-api](https://github.com/erictik/midjourney-api)
-- [Documentation Midjourney officielle](https://docs.midjourney.com/)
+- [Official Midjourney documentation](https://docs.midjourney.com/)
 
-## Sécurité
+## Security
 
-⚠️ N'oubliez pas d'ajouter `.env` à votre `.gitignore` pour ne pas committer vos tokens!
+⚠️ The `.env` file contains your tokens. The project already lists it in
+`.gitignore`. Never commit it.
 
-```
+```text
 .env
 ```

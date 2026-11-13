@@ -1,41 +1,42 @@
 {
   "name": "asheron",
   "version": "0.0.1",
-  "author": "pixelastic",
-  "description": "",
-  "keywords": [],
-  "repository": "pixelastic/asheron",
-  "homepage": "https://github.com/pixelastic/asheron",
   "type": "module",
+  "description": "A CLI tool to generate images using MidJourney.",
+  "author": "pixelastic",
+  "homepage": "https://github.com/pixelastic/asheron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixelastic/asheron"
+  },
   "sideEffects": false,
   "license": "MIT",
   "engines": {
     "node": ">=22.18.0"
   },
-  "packageManager": "yarn@4.12.0",
+  "packageManager": "yarn@4.18.0",
   "files": [
-    "lib/*.js",
-    "bin/asheron"
+    "lib/*.js"
   ],
-  "bin": "./bin/asheron",
   "exports": {
     ".": "./lib/main.js"
   },
   "main": "./lib/main.js",
+  "bin": "./bin/asheron",
   "devDependencies": {
-    "aberlaas": "2.19.0"
+    "aberlaas": "2.42.0"
+  },
+  "dependencies": {
+    "dotenv": "17.4.2",
+    "midjourney": "4.3.18"
   },
   "scripts": {
     "ci": "./scripts/ci",
     "compress": "./scripts/compress",
     "lint": "./scripts/lint",
     "lint:fix": "./scripts/lint-fix",
+    "release": "./scripts/release",
     "test": "./scripts/test",
-    "test:watch": "./scripts/test-watch",
-    "release": "./scripts/release"
-  },
-  "dependencies": {
-    "dotenv": "17.4.2",
-    "midjourney": "4.3.18"
+    "test:watch": "./scripts/test-watch"
   }
 }
